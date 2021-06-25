@@ -1,0 +1,19 @@
+<h1>
+  {{winner ? 'Restart the game' : message}}
+</h1>
+
+
+<div id="board">
+  <div *ngFor="let board of initBoard" [ngClass]="{disabled: winner}">
+    <div class="piece pointer" (click)="play(board)" [ngClass]="{'disabled': board.state !== null}">
+      <div [ngClass]="board?.state?.toLowerCase()"> {{ board?.state}} </div>
+    </div>
+  </div>
+</div>
+
+<div id="status">
+  <div *ngIf="winner">{{state}} WON</div>
+  <button *ngIf="gameOver || winner" (click)="initGameBoard()">
+    Restart Game
+  </button>
+</div>

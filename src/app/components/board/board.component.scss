@@ -1,0 +1,61 @@
+h1 {
+  text-align: center;
+}
+
+#board {
+  width: 30%;
+  min-width: 490px;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  align-items: center;
+  margin: 7% auto 50px auto;
+  flex-wrap: wrap;
+
+  & > * {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+  }
+
+  .piece {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    &.pointer {
+      cursor: pointer;
+    }
+
+    &.disabled {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .o, .x {
+      font-size: 90px;
+    }
+
+    .o {
+      color: grey;
+    }
+
+    .x {
+      color: dimgray;
+    }
+  }
+
+}
+
+#status {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  & > :first-child {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
